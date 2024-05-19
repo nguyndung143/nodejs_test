@@ -5,18 +5,20 @@ const path = require('path');
 const app = express();
 const port = 3000;
 
-app.use(express.static(path.join(__dirname,'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(morgan('combined'));
-
-app.engine('hbs', hbars.engine({
-  extname: '.hbs'
-}));
+app.use(express.urlencoded);
+app.use(express.json);
+app.engine(
+  'hbs',
+  hbars.engine({
+    extname: '.hbs',
+  }),
+);
 app.set('view engine', 'hbs');
-app.set('views', path.join(__dirname, 'resource','views'));
-
-app.get('/', (req, res) => {
-  res.render('home');
-});
+app.set('views', path.join(__dirname, 'resource', 'views'));
+//khởi tạo tuyến đường
+route(app);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
