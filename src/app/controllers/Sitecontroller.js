@@ -6,4 +6,4 @@ class SiteController {
     res.send();
   }
 }
-module.exports = new SiteController();
+module.exports = new SiteController;
