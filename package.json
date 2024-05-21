@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "codeformat":"link-staged" ,
+    "codeformat": "link-staged",
     "start": "nodemon --inspect src/index.js",
     "watch": "node-sass --watch src/resource/scss/ --output src/public/css/",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,13 +18,13 @@
     "blog",
     "nodejs"
   ],
-  "link-staged":{
-    "src/**/*.{js,json,scss}":"prettier --write --single-quote --trailing-comma all" 
+  "link-staged": {
+    "src/**/*.{js,json,scss}": "prettier --write --single-quote --trailing-comma all"
   },
-  "husky":{
-    "hooks":{
-      "pre-commit":"npm",
-      "pre-push":"link-staged"
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm",
+      "pre-push": "link-staged"
     }
   },
   "author": "dung",
@@ -36,6 +36,7 @@
   "dependencies": {
     "express": "^4.19.2",
     "express-handlebars": "^7.1.2",
+    "mongoose": "^8.4.0",
     "morgan": "^1.10.0"
   },
   "devDependencies": {

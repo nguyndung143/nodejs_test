@@ -5,11 +5,12 @@ const path = require('path');
 const app = express();
 const port = 3000;
 const route = require('./routes')
+const db = require('./config/db')
 
+db.connect();
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(morgan('combined'));
-app.use(express.urlencoded);
-app.use(express.json);
+
 app.engine(
   'hbs',
   hbars.engine({
